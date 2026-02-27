@@ -2,41 +2,42 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F6FA">
+    android:background="#EEF1F7">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp">
 
-        <!-- Título -->
+        <!-- TITULO -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Panel de Control"
-            android:textSize="26sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#1A237E"
-            android:layout_marginBottom="25dp"/>
+            android:textColor="#0D1B4C"
+            android:layout_marginBottom="30dp"/>
 
-        <!-- Card 1 -->
+        <!-- INGRESAR ESTUDIANTES -->
         <LinearLayout
             android:id="@+id/cardIngresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/dialog_holo_light_frame"
+            android:background="@drawable/card_menu"
             android:orientation="horizontal"
-            android:padding="20dp"
-            android:layout_marginBottom="15dp"
+            android:padding="22dp"
+            android:layout_marginBottom="18dp"
             android:clickable="true"
             android:focusable="true">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
                 android:src="@android:drawable/ic_menu_add"
-                android:layout_marginEnd="15dp"/>
+                android:tint="#3949AB"
+                android:layout_marginEnd="18dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -44,70 +45,153 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="Ingresar Estudiantes"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:text="Registrar nuevos estudiantes en el sistema"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Registrar nuevos estudiantes al sistema"
-                    android:textSize="14sp"/>
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- Card 2 -->
+        <!-- VER ASISTENCIA -->
         <LinearLayout
             android:id="@+id/cardVerAsistencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/dialog_holo_light_frame"
+            android:background="@drawable/card_menu"
             android:orientation="horizontal"
-            android:padding="20dp"
-            android:layout_marginBottom="15dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_agenda"
-                android:layout_marginEnd="15dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ver Asistencia"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <!-- Card 3 -->
-        <LinearLayout
-            android:id="@+id/cardCentroControl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            android:orientation="horizontal"
-            android:padding="20dp"
-            android:layout_marginBottom="15dp"
+            android:padding="22dp"
+            android:layout_marginBottom="18dp"
             android:clickable="true"
             android:focusable="true">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_menu_manage"
-                android:layout_marginEnd="15dp"/>
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@android:drawable/ic_menu_agenda"
+                android:tint="#00897B"
+                android:layout_marginEnd="18dp"/>
 
-            <TextView
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Centro de Control"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Ver Asistencia"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Consultar registros de asistencia"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- CENTRO DE CONTROL -->
+        <LinearLayout
+            android:id="@+id/cardCentroControl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_menu"
+            android:orientation="horizontal"
+            android:padding="22dp"
+            android:layout_marginBottom="18dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@android:drawable/ic_menu_manage"
+                android:tint="#F57C00"
+                android:layout_marginEnd="18dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Centro de Control"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Configuración avanzada del sistema"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- NUEVO BOTON COMUNICACION -->
+        <LinearLayout
+            android:id="@+id/cardComunicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_menu"
+            android:orientation="horizontal"
+            android:padding="22dp"
+            android:layout_marginBottom="18dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@android:drawable/ic_menu_send"
+                android:tint="#8E24AA"
+                android:layout_marginEnd="18dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Comunicación"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Enviar mensajes o notificaciones"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>

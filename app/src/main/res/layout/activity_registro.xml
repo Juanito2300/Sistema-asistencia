@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Usuario"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Usuario -->
+        <EditText
+            android:id="@+id/etNuevoUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Usuario"
+            android:padding="14dp"
+            android:background="@drawable/edittext_style"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Correo -->
+        <EditText
+            android:id="@+id/etCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:padding="14dp"
+            android:background="@drawable/edittext_style"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Teléfono -->
+        <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:padding="14dp"
+            android:background="@drawable/edittext_style"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Contraseña -->
+        <EditText
+            android:id="@+id/etNuevaPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="14dp"
+            android:background="@drawable/edittext_style"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Confirmar Contraseña -->
+        <EditText
+            android:id="@+id/etConfirmarPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirmar Contraseña"
+            android:inputType="textPassword"
+            android:padding="14dp"
+            android:background="@drawable/edittext_style"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- Botón Registrar -->
+        <Button
+            android:id="@+id/btnRegistrarUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:padding="14dp"
+            android:elevation="4dp"/>
+
+        <!-- Volver al login -->
+        <TextView
+            android:id="@+id/tvVolverLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Ya tienes cuenta? Inicia sesión"
+            android:textColor="#3F51B5"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+</ScrollView>

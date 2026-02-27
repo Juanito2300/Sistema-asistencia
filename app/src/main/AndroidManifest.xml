@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Asistencia"
         tools:targetApi="31">
         <activity
+            android:name=".ComunicacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".registro"
+            android:exported="false" />
+        <activity
             android:name=".CentroControlActivity"
             android:exported="false" />
         <activity

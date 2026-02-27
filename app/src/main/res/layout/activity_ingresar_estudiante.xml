@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F6FA">
+=======
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF1F7">
+>>>>>>> 2a0e33e (nueva modificacion)
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,10 +18,16 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+<<<<<<< HEAD
+=======
+        <!-- ENCABEZADO -->
+
+>>>>>>> 2a0e33e (nueva modificacion)
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registro de Estudiante"
+<<<<<<< HEAD
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#1A237E"
@@ -67,4 +81,84 @@
             android:backgroundTint="#1A237E"/>
 
     </LinearLayout>
+=======
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresa la información del estudiante"
+            android:textSize="14sp"
+            android:textColor="#6B7280"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- TARJETA FORMULARIO -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:padding="20dp">
+
+            <EditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Nombre completo"
+                android:textSize="16sp"
+                android:padding="14dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Teléfono"
+                android:textSize="16sp"
+                android:inputType="phone"
+                android:padding="14dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etCedula"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Número de cédula"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:padding="14dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="Correo"
+                android:textSize="16sp"
+                android:padding="14dp"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginBottom="28dp"/>
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Guardar Estudiante"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1A237E"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+>>>>>>> 2a0e33e (nueva modificacion)
 </ScrollView>

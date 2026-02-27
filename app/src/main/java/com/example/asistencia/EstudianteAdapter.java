@@ -1,7 +1,5 @@
 package com.example.asistencia;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,73 +31,19 @@ public class EstudianteAdapter extends RecyclerView.Adapter<EstudianteAdapter.Vi
         Estudiante e = lista.get(position);
 
         holder.tvNombre.setText(e.nombre);
-        holder.tvTelefono.setText(e.telefono);
-        holder.tvCedula.setText(e.cedula);
-        holder.tvDireccion.setText(e.direccion);
+        holder.tvTelefono.setText("Tel: " + e.telefono);
+        holder.tvCedula.setText("Cédula: " + e.cedula);
+        holder.tvDireccion.setText("Dirección: " + e.direccion);
 
-        // 🔥 RESET obligatorio
-        holder.btnSi.setVisibility(View.VISIBLE);
-        holder.btnNo.setVisibility(View.VISIBLE);
-        holder.btnSi.setTextSize(20);
-        holder.btnNo.setTextSize(20);
-
-        // 🔥 Aplicar estado actual
-        if(e.asistencia == 1){
-            holder.btnSi.setTextSize(32);
-            holder.btnNo.setVisibility(View.GONE);
-        }
-        else if(e.asistencia == 0){
-            holder.btnNo.setTextSize(32);
-            holder.btnSi.setVisibility(View.GONE);
-        }
-        // Si es -1 se ven los dos normales
-
-        // ✔ ASISTIÓ
-        holder.btnSi.setOnClickListener(v -> {
-            e.asistencia = 1;
-            notifyItemChanged(holder.getAdapterPosition());
-        });
-
-        // ❌ FALTA → abre WhatsApp
-        holder.btnNo.setOnClickListener(v -> {
-
-            e.asistencia = 0;
-            notifyItemChanged(holder.getAdapterPosition());
-
-            String numero = e.telefono;
-
-            // Limpiar caracteres que no sean números
-            numero = numero.replaceAll("[^0-9]", "");
-
-            // Si tiene 10 dígitos, agregamos código Colombia 57
-            if(numero.length() == 10){
-                numero = "57" + numero;
-            }
-
-            String mensaje = "Cordial saludo.\n\n"
-                    + "Le informamos que el estudiante " + e.nombre +
-                    " no registró asistencia a la jornada académica del día de hoy.\n\n"
-                    + "De manera atenta, solicitamos enviar la respectiva excusa o justificación "
-                    + "por este mismo medio a la mayor brevedad posible.\n\n"
-                    + "Agradecemos su atención y colaboración.\n\n"
-                    + "Atentamente,\n"
-                    + "Coordinación Académica.";
-
-            try {
-
-                String url = "https://wa.me/" + numero + "?text=" + Uri.encode(mensaje);
-
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                v.getContext().startActivity(intent);
-
-            } catch (Exception ex) {
-
+        holder.btnSi.setOnClickListener(v ->
                 Toast.makeText(v.getContext(),
-                        "WhatsApp no está instalado",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+                        "Asistió",
+                        Toast.LENGTH_SHORT).show());
+
+        holder.btnNo.setOnClickListener(v ->
+                Toast.makeText(v.getContext(),
+                        "No asistió",
+                        Toast.LENGTH_SHORT).show());
     }
 
     @Override
@@ -109,7 +53,7 @@ public class EstudianteAdapter extends RecyclerView.Adapter<EstudianteAdapter.Vi
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tvNombre, tvTelefono, tvCedula, tvDireccion, btnSi, btnNo;
+        TextView tvNombre,tvTelefono,tvCedula,tvDireccion,btnSi,btnNo;
 
         public ViewHolder(View itemView){
             super(itemView);

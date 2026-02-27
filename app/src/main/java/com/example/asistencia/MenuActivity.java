@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.widget.LinearLayout;
+import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -30,9 +31,25 @@ public class MenuActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
         cardCentroControl.setOnClickListener(view -> {
             Intent intent = new Intent(MenuActivity.this, CentroControlActivity.class);
             startActivity(intent);
         });
+
+        LinearLayout cardComunicacion = findViewById(R.id.cardComunicacion);
+        cardComunicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MenuActivity.this, ComunicacionActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
+
     }
 }

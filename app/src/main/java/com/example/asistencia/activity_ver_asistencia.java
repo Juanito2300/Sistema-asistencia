@@ -3,16 +3,14 @@ package com.example.asistencia;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+
 import java.util.ArrayList;
 
 public class activity_ver_asistencia extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    DatabaseHelper dbHelper;
-    ArrayList<String> listaDatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,41 +23,25 @@ public class activity_ver_asistencia extends AppCompatActivity {
         }
 
         recyclerView = findViewById(R.id.recyclerEstudiantes);
-        dbHelper = new DatabaseHelper(this);
 
         cargarDatos();
     }
 
-   private void cargarDatos(){
+    private void cargarDatos(){
 
         ArrayList<Estudiante> lista = new ArrayList<>();
 
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        Cursor cursor = db.rawQuery(
-                "SELECT nombre, telefono, cedula, direccion FROM estudiantes", null);
-
-        while(cursor.moveToNext()){
-            lista.add(
-                    new Estudiante(
-                            cursor.getString(0),
-                            cursor.getString(1),
-                            cursor.getString(2),
-                            cursor.getString(3)
-                    )
-            );
-        }
-
-        cursor.close();
-        db.close();
+        lista.add(new Estudiante("Juan Pérez","3001112233","123456","Calle 10"));
+        lista.add(new Estudiante("Ana Gómez","3002223344","987654","Calle 20"));
+        lista.add(new Estudiante("Carlos López","3003334455","456789","Calle 30"));
+        lista.add(new Estudiante("María Torres","3004445566","654321","Calle 40"));
 
         EstudianteAdapter adapter = new EstudianteAdapter(lista);
 
-        recyclerView.setLayoutManager(
-                new LinearLayoutManager(this));
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
+
     @Override
     public boolean onSupportNavigateUp(){
         finish();

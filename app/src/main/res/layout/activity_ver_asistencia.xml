@@ -1,66 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
-    android:background="#F4F6FA">
+    android:background="#EEF1F7">
 
-    <TextView
-        android:text="Lista de Estudiantes"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#1A237E"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"/>
+    <!-- ENCABEZADO -->
 
-    <!-- ENCABEZADO PERFECTAMENTE ALINEADO -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#E0E0E0"
-        android:padding="8dp"
+        android:layout_height="110dp"
+        android:background="#1A237E"
+        android:padding="20dp"
         android:gravity="center_vertical">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.2"
-            android:text="Nombre"
+            android:text="Control de Asistencia"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1.2"
-            android:text="Teléfono"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Cédula"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Dirección"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"/>
-
-        <TextView
+            android:textColor="#FFFFFF"
             android:layout_width="wrap_content"
-            android:text="Asistencia"
-            android:textStyle="bold"
             android:layout_height="wrap_content"/>
+
     </LinearLayout>
+
+    <!-- LISTA -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerEstudiantes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:padding="12dp"/>
 
 </LinearLayout>

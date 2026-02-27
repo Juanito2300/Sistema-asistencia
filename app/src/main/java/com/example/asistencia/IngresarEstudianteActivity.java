@@ -2,19 +2,15 @@ package com.example.asistencia;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
-import android.content.Intent;
 
 public class IngresarEstudianteActivity extends AppCompatActivity {
 
     EditText etNombre, etTelefono, etCedula, etDireccion;
     Button btnGuardar;
-    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +21,6 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Ingresar Estudiante");
         }
-
-        dbHelper = new DatabaseHelper(this);
 
         etNombre = findViewById(R.id.etNombre);
         etTelefono = findViewById(R.id.etTelefono);
@@ -54,24 +48,16 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
             return;
         }
 
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
+        Toast.makeText(this, "Estudiante guardado correctamente", Toast.LENGTH_SHORT).show();
 
-        values.put(DatabaseHelper.COLUMN_NOMBRE, nombre);
-        values.put(DatabaseHelper.COLUMN_TELEFONO, telefono);
-        values.put(DatabaseHelper.COLUMN_CEDULA, cedula);
-        values.put(DatabaseHelper.COLUMN_DIRECCION, direccion);
+        limpiarCampos();
+    }
 
-        long result = db.insert(DatabaseHelper.TABLE_ESTUDIANTES, null, values);
-
-        if(result != -1) {
-            Toast.makeText(this, "Estudiante guardado con éxito", Toast.LENGTH_SHORT).show();
-            finish(); // vuelve al menú
-        } else {
-            Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show();
-        }
-
-        db.close();
+    private void limpiarCampos(){
+        etNombre.setText("");
+        etTelefono.setText("");
+        etCedula.setText("");
+        etDireccion.setText("");
     }
 
     @Override
