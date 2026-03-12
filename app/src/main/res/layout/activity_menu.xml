@@ -28,7 +28,7 @@
             android:background="@drawable/card_menu"
             android:orientation="horizontal"
             android:padding="22dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -40,27 +40,26 @@
                 android:layout_marginEnd="18dp"/>
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:text="Ingresar Estudiantes"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#111111"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Registrar nuevos estudiantes en el sistema"
-                    android:textSize="14sp"
+                    android:text="Registrar nuevos estudiantes"
+                    android:textSize="13sp"
                     android:textColor="#666666"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
-
         </LinearLayout>
 
         <!-- VER ASISTENCIA -->
@@ -71,7 +70,7 @@
             android:background="@drawable/card_menu"
             android:orientation="horizontal"
             android:padding="22dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -89,21 +88,20 @@
 
                 <TextView
                     android:text="Ver Asistencia"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#111111"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Consultar registros de asistencia"
-                    android:textSize="14sp"
+                    android:text="Consultar registros"
+                    android:textSize="13sp"
                     android:textColor="#666666"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
-
         </LinearLayout>
 
         <!-- CENTRO DE CONTROL -->
@@ -114,7 +112,7 @@
             android:background="@drawable/card_menu"
             android:orientation="horizontal"
             android:padding="22dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -132,24 +130,23 @@
 
                 <TextView
                     android:text="Centro de Control"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#111111"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Configuración avanzada del sistema"
-                    android:textSize="14sp"
+                    android:text="Configuración del sistema"
+                    android:textSize="13sp"
                     android:textColor="#666666"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
-
         </LinearLayout>
 
-        <!-- NUEVO BOTON COMUNICACION -->
+        <!-- COMUNICACION -->
         <LinearLayout
             android:id="@+id/cardComunicacion"
             android:layout_width="match_parent"
@@ -157,7 +154,7 @@
             android:background="@drawable/card_menu"
             android:orientation="horizontal"
             android:padding="22dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -175,23 +172,63 @@
 
                 <TextView
                     android:text="Comunicación"
-                    android:textSize="19sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#111111"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:text="Enviar mensajes o notificaciones"
-                    android:textSize="14sp"
+                    android:text="Enviar mensajes"
+                    android:textSize="13sp"
                     android:textColor="#666666"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
+        </LinearLayout>
 
+        <!-- SERVICIO GPS -->
+        <LinearLayout
+            android:id="@+id/cardGPS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_menu"
+            android:orientation="horizontal"
+            android:padding="22dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@android:drawable/ic_menu_mylocation"
+                android:tint="#D32F2F"
+                android:layout_marginEnd="18dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Servicio GPS"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#111111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Ubicación del dispositivo"
+                    android:textSize="13sp"
+                    android:textColor="#666666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-
 </ScrollView>

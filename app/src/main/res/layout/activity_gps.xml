@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#EEF1F7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!-- TITULO -->
+    <TextView
+        android:text="Dashboard GPS de Asistencia"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#0D1B4C"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Control de ubicación y asistencia de estudiantes"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- TARJETA ESTADISTICAS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_dashboard"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="25"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#3949AB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Estudiantes"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="18"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Asistieron"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="7"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#C62828"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Ausentes"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_dashboard"
+            android:padding="15dp"
+            android:shrinkColumns="3"
+            android:stretchColumns="0,1,2">
+
+            <!-- ENCABEZADO -->
+
+            <TableRow>
+
+                <TextView
+                    android:text="Estudiante"
+                    android:textStyle="bold"
+                    android:textColor="#0D1B4C"/>
+
+                <TextView
+                    android:text="Teléfono"
+                    android:textStyle="bold"
+                    android:textColor="#0D1B4C"/>
+
+                <TextView
+                    android:text="Estado"
+                    android:textStyle="bold"
+                    android:textColor="#0D1B4C"/>
+
+                <TextView
+                    android:text="Acciones"
+                    android:textStyle="bold"
+                    android:textColor="#0D1B4C"/>
+
+            </TableRow>
+
+            <!-- 18 ASISTENTES -->
+
+            <TableRow><TextView android:text="Juan Perez"/><TextView android:text="3001110001"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Maria Lopez"/><TextView android:text="3001110002"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Carlos Gomez"/><TextView android:text="3001110003"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Laura Martinez"/><TextView android:text="3001110004"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Andres Ruiz"/><TextView android:text="3001110005"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Sofia Rojas"/><TextView android:text="3001110006"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Daniel Torres"/><TextView android:text="3001110007"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Miguel Castro"/><TextView android:text="3001110008"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Natalia Peña"/><TextView android:text="3001110009"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Felipe Ramirez"/><TextView android:text="3001110010"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Luisa Giraldo"/><TextView android:text="3001110011"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Kevin Salazar"/><TextView android:text="3001110012"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Paula Herrera"/><TextView android:text="3001110013"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="David Franco"/><TextView android:text="3001110014"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Sara Medina"/><TextView android:text="3001110015"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Juan Pablo"/><TextView android:text="3001110016"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Camilo Vargas"/><TextView android:text="3001110017"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Esteban Diaz"/><TextView android:text="3001110018"/><TextView android:text="✔" android:textColor="#2E7D32"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+
+            <!-- 7 AUSENTES -->
+
+            <TableRow><TextView android:text="Pedro Rojas"/><TextView android:text="3001110019"/><TextView android:text="✖" android:textColor="#C62828"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Valentina Ruiz"/><TextView android:text="3001110020"/><TextView android:text="✖" android:textColor="#C62828"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Samuel Castro"/><TextView android:text="3001110021"/><TextView android:text="✖" android:textColor="#C62828"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Diana Torres"/><TextView android:text="3001110022"/><TextView android:text="✖" android:textColor="#C62828"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Ricardo Vega"/><TextView android:text="3001110023"/><TextView android:text="✖" android:textColor="#C62828"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Karen Morales"/><TextView android:text="3001110024"/><TextView android:text="✖" android:textColor="#C62828"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+            <TableRow><TextView android:text="Julian Herrera"/><TextView android:text="3001110025"/><TextView android:text="✖" android:textColor="#C62828"/><Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="10sp"
+                android:padding="4dp"
+                android:minWidth="0dp"/></TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>
