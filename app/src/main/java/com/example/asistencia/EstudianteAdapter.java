@@ -57,7 +57,6 @@ public class EstudianteAdapter extends RecyclerView.Adapter<EstudianteAdapter.Vi
 
         Context context = holder.itemView.getContext();
 
-        // ❌ NO ASISTIÓ
         holder.btnNo.setOnClickListener(v -> {
 
             new AlertDialog.Builder(context)
@@ -68,10 +67,8 @@ public class EstudianteAdapter extends RecyclerView.Adapter<EstudianteAdapter.Vi
                         // ocultar ✔
                         holder.btnSi.setVisibility(View.GONE);
 
-                        // dejar ❌ fijo
                         holder.btnNo.setEnabled(false);
 
-                        // mensaje WhatsApp
                         try {
                             String mensaje = "Hola, buen día.%0A%0ASe registra que no asististe a la clase programada el día de hoy. Por favor envía una justificación lo antes posible.%0A%0AGracias.";
                             String url = "https://wa.me/57" + est.telefono + "?text=" + mensaje;
@@ -90,7 +87,6 @@ public class EstudianteAdapter extends RecyclerView.Adapter<EstudianteAdapter.Vi
         });
 
 
-        // ✔ SÍ ASISTIÓ
         holder.btnSi.setOnClickListener(v -> {
 
             new AlertDialog.Builder(context)
@@ -98,7 +94,6 @@ public class EstudianteAdapter extends RecyclerView.Adapter<EstudianteAdapter.Vi
                     .setMessage("¿Confirmar asistencia?")
                     .setPositiveButton("Sí", (dialog, which) -> {
 
-                        // ocultar ❌
                         holder.btnNo.setVisibility(View.GONE);
 
                         // dejar ✔ fijo

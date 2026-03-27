@@ -146,7 +146,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- COMUNICACION -->
         <LinearLayout
             android:id="@+id/cardComunicacion"
             android:layout_width="match_parent"

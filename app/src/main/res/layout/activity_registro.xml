@@ -21,7 +21,7 @@
             android:textColor="#222222"
             android:layout_marginBottom="30dp"/>
 
-        <!-- Usuario -->
+
         <EditText
             android:id="@+id/etNuevoUsuario"
             android:layout_width="match_parent"
@@ -31,7 +31,6 @@
             android:background="@drawable/edittext_style"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Correo -->
         <EditText
             android:id="@+id/etCorreo"
             android:layout_width="match_parent"
@@ -42,7 +41,6 @@
             android:background="@drawable/edittext_style"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Teléfono -->
         <EditText
             android:id="@+id/etTelefono"
             android:layout_width="match_parent"
@@ -53,7 +51,6 @@
             android:background="@drawable/edittext_style"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Contraseña -->
         <EditText
             android:id="@+id/etNuevaPassword"
             android:layout_width="match_parent"
@@ -64,7 +61,6 @@
             android:background="@drawable/edittext_style"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Confirmar Contraseña -->
         <EditText
             android:id="@+id/etConfirmarPassword"
             android:layout_width="match_parent"
@@ -75,7 +71,6 @@
             android:background="@drawable/edittext_style"
             android:layout_marginBottom="30dp"/>
 
-        <!-- Botón Registrar -->
         <Button
             android:id="@+id/btnRegistrarUsuario"
             android:layout_width="match_parent"
@@ -87,7 +82,6 @@
             android:padding="14dp"
             android:elevation="4dp"/>
 
-        <!-- Volver al login -->
         <TextView
             android:id="@+id/tvVolverLogin"
             android:layout_width="wrap_content"

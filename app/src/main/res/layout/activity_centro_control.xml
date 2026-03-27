@@ -26,7 +26,6 @@
 
     </LinearLayout>
 
-    <!-- ENCABEZADO DE TABLA -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -77,7 +76,6 @@
 
     </LinearLayout>
 
-    <!-- LISTA (RecyclerView) -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCentro"

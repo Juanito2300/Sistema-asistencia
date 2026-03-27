@@ -18,13 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // enlazar elementos del XML
         etUsuario = findViewById(R.id.etUsuario);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegistro = findViewById(R.id.btnRegistro); // <-- enlazamos botón de registro
 
-        // Listener para login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,11 +38,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Listener para registro
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // abrir la actividad de registro
                 Intent intent = new Intent(MainActivity.this, registro.class);
                 startActivity(intent);
             }

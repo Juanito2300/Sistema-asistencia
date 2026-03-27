@@ -15,7 +15,6 @@ public class ComunicacionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comunicacion);
 
-        // ESTUDIANTE 1
         Button btnLlamar = findViewById(R.id.btnLlamar);
         Button btnCorreo = findViewById(R.id.btnCorreo);
 
@@ -26,7 +25,6 @@ public class ComunicacionActivity extends AppCompatActivity {
         btnLlamar.setOnClickListener(v -> confirmarLlamada(nombre1, telefono1));
         btnCorreo.setOnClickListener(v -> confirmarCorreo(correo1));
 
-        // ESTUDIANTE 2
         Button btnLlamar2 = findViewById(R.id.btnLlamar2);
         Button btnCorreo2 = findViewById(R.id.btnCorreo2);
 
@@ -37,8 +35,6 @@ public class ComunicacionActivity extends AppCompatActivity {
         btnLlamar2.setOnClickListener(v -> confirmarLlamada(nombre2, telefono2));
         btnCorreo2.setOnClickListener(v -> confirmarCorreo(correo2));
     }
-
-    // 🔵 MÉTODO LLAMAR
     private void confirmarLlamada(String nombre, String telefono) {
         new AlertDialog.Builder(this)
                 .setTitle("Confirmar")
@@ -52,7 +48,6 @@ public class ComunicacionActivity extends AppCompatActivity {
                 .show();
     }
 
-    // 🟢 MÉTODO CORREO (ARREGLADO)
     private void confirmarCorreo(String correo) {
         new AlertDialog.Builder(this)
                 .setTitle("Confirmar")
@@ -66,11 +61,10 @@ public class ComunicacionActivity extends AppCompatActivity {
                     intent.putExtra(Intent.EXTRA_TEXT, "Hola, buen día...");
 
                     try {
-                        // 👉 Intentar abrir Gmail directamente
+
                         intent.setPackage("com.google.android.gm");
                         startActivity(intent);
                     } catch (Exception e) {
-                        // 👉 Si Gmail no está, abrir selector
                         Intent fallback = new Intent(Intent.ACTION_SEND);
                         fallback.setType("message/rfc822");
                         fallback.putExtra(Intent.EXTRA_EMAIL, new String[]{correo});

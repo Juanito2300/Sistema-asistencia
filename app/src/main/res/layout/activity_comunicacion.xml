@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:background="#F5F7FA">
 
-    <!-- ENCABEZADO -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,8 +28,6 @@
 
     </LinearLayout>
 
-
-    <!-- LISTA DE ESTUDIANTES -->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -81,9 +78,6 @@
 
 
 
-
-                <!-- BOTONES -->
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,7 +108,6 @@
 
                 </LinearLayout>
 
-                <!-- ESTUDIANTE 2 -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -179,7 +172,6 @@
             </LinearLayout>
 
 
-            <!-- AQUÍ SE REPETIRÁN ESTUDIANTES DINÁMICOS -->
 
         </LinearLayout>
 
