@@ -5,13 +5,13 @@ public class Estudiante {
     String nombre;
     String telefono;
     String cedula;
-    String direccion;
+    String correo;
 
-    public Estudiante(String nombre, String telefono, String cedula, String direccion){
+    public Estudiante(String nombre, String telefono, String cedula, String correo){
         this.nombre = nombre;
         this.telefono = telefono;
         this.cedula = cedula;
-        this.direccion = direccion;
+        this.correo = correo;
     }
 
 }

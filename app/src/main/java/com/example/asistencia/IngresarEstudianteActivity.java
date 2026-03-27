@@ -9,7 +9,7 @@ import android.view.View;
 
 public class IngresarEstudianteActivity extends AppCompatActivity {
 
-    EditText etNombre, etTelefono, etCedula, etDireccion;
+    EditText etNombre, etTelefono, etCedula, etCorreo;
     Button btnGuardar;
 
     @Override
@@ -25,7 +25,7 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
         etNombre = findViewById(R.id.etNombre);
         etTelefono = findViewById(R.id.etTelefono);
         etCedula = findViewById(R.id.etCedula);
-        etDireccion = findViewById(R.id.etDireccion);
+        etCorreo = findViewById(R.id.etCorreo);
         btnGuardar = findViewById(R.id.btnGuardar);
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
@@ -41,9 +41,9 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
         String nombre = etNombre.getText().toString().trim();
         String telefono = etTelefono.getText().toString().trim();
         String cedula = etCedula.getText().toString().trim();
-        String direccion = etDireccion.getText().toString().trim();
+        String correo = etCorreo.getText().toString().trim();
 
-        if(nombre.isEmpty() || telefono.isEmpty() || cedula.isEmpty() || direccion.isEmpty()) {
+        if(nombre.isEmpty() || telefono.isEmpty() || cedula.isEmpty() || correo.isEmpty()) {
             Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -57,7 +57,7 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
         etNombre.setText("");
         etTelefono.setText("");
         etCedula.setText("");
-        etDireccion.setText("");
+        etCorreo.setText("");
     }
 
     @Override

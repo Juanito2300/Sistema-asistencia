@@ -35,7 +35,7 @@ public class CentroControlAdapter extends RecyclerView.Adapter<CentroControlAdap
         holder.tvNombre.setText(e.nombre);
         holder.tvTelefono.setText("Tel: " + e.telefono);
         holder.tvCedula.setText("Cédula: " + e.cedula);
-        holder.tvDireccion.setText("Dirección: " + e.direccion);
+        holder.tvCorreo.setText("Correo: " + e.correo);
 
         holder.btnEditar.setOnClickListener(v ->
                 Toast.makeText(v.getContext(),
@@ -55,7 +55,7 @@ public class CentroControlAdapter extends RecyclerView.Adapter<CentroControlAdap
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tvNombre,tvTelefono,tvCedula,tvDireccion,btnEditar,btnEliminar;
+        TextView tvNombre,tvTelefono,tvCedula,tvCorreo,btnEditar,btnEliminar;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -63,7 +63,7 @@ public class CentroControlAdapter extends RecyclerView.Adapter<CentroControlAdap
             tvNombre = itemView.findViewById(R.id.tvNombre);
             tvTelefono = itemView.findViewById(R.id.tvTelefono);
             tvCedula = itemView.findViewById(R.id.tvCedula);
-            tvDireccion = itemView.findViewById(R.id.tvDireccion);
+            tvCorreo = itemView.findViewById(R.id.tvCorreo);
             btnEditar = itemView.findViewById(R.id.btnEditar);
             btnEliminar = itemView.findViewById(R.id.btnEliminar);
         }

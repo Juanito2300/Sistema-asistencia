@@ -26,12 +26,64 @@
 
     </LinearLayout>
 
+    <!-- TITULOS (ENCABEZADOS DE TABLA) -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#D6DBF5">
+
+        <TextView
+            android:text="Nombre"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="Teléfono"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="Cédula"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="Correo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="Estado"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
     <!-- LISTA -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerEstudiantes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="12dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="0dp"/>
 
 </LinearLayout>

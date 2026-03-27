@@ -31,10 +31,10 @@ public class CentroControlActivity extends AppCompatActivity {
 
         ArrayList<Estudiante> lista = new ArrayList<>();
 
-        lista.add(new Estudiante("Juan Pérez","3001112233","123456","Calle 10"));
-        lista.add(new Estudiante("Ana Gómez","3002223344","987654","Calle 20"));
-        lista.add(new Estudiante("Carlos López","3003334455","456789","Calle 30"));
-        lista.add(new Estudiante("María Torres","3004445566","654321","Calle 40"));
+        lista.add(new Estudiante("Juan Pérez","3001112233","123456","juanito@gmail.com"));
+        lista.add(new Estudiante("Ana Gómez","3002223344","987654","angomez5@gmail.com"));
+        lista.add(new Estudiante("Carlos López","3003334455","456789","carlitos45@gmail.com"));
+        lista.add(new Estudiante("María Torres","3004445566","654321","marito678@gmail.com"));
 
         CentroControlAdapter adapter = new CentroControlAdapter(lista);
 

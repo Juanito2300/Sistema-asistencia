@@ -26,13 +26,6 @@
             android:textSize="20sp"
             android:textStyle="bold"/>
 
-        <Button
-            android:id="@+id/btnComunicar"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Comunicar"
-            android:textColor="#1A237E"
-            android:backgroundTint="#FFFFFF"/>
 
     </LinearLayout>
 
@@ -65,7 +58,7 @@
                     android:id="@+id/txtNombre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nombre: Juan Pérez"
+                    android:text="Nombre: Juan esteban"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="#1A237E"/>
@@ -74,7 +67,7 @@
                     android:id="@+id/txtCorreo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Correo: juan@email.com"
+                    android:text="Correo: juanestebanecheverri63@gmail.com"
                     android:textSize="15sp"
                     android:layout_marginTop="4dp"/>
 
@@ -82,9 +75,11 @@
                     android:id="@+id/txtTelefono"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Teléfono: 3000000000"
+                    android:text="Teléfono: 3105928091"
                     android:textSize="15sp"
                     android:layout_marginTop="2dp"/>
+
+
 
 
                 <!-- BOTONES -->
@@ -116,6 +111,68 @@
                         android:text="Enviar correo"
                         android:backgroundTint="#00ACC1"
                         android:textColor="#FFFFFF"/>
+
+                </LinearLayout>
+
+                <!-- ESTUDIANTE 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:elevation="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre: Juan jose"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1A237E"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Correo: juan@gmail.com"
+                        android:textSize="15sp"
+                        android:layout_marginTop="4dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Teléfono: 3000000000"
+                        android:textSize="15sp"
+                        android:layout_marginTop="2dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp">
+
+                        <Button
+                            android:id="@+id/btnLlamar2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Llamar"
+                            android:backgroundTint="#3949AB"
+                            android:layout_height="40dp"
+                            android:textColor="#FFFFFF"/>
+
+                        <Space
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"/>
+
+                        <Button
+                            android:id="@+id/btnCorreo2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Enviar correo"
+                            android:backgroundTint="#00ACC1"
+                            android:layout_height="40dp"
+                            android:textColor="#FFFFFF"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
