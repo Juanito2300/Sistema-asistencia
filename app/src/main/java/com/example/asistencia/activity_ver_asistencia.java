@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class activity_ver_asistencia extends AppCompatActivity {
 
     RecyclerView recyclerView;
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +25,14 @@ public class activity_ver_asistencia extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerEstudiantes);
 
+        dbHelper = new DatabaseHelper(this);
+
         cargarDatos();
     }
 
     private void cargarDatos(){
 
-        ArrayList<Estudiante> lista = new ArrayList<>();
-
-        lista.add(new Estudiante("Juan Pérez","3001112233","123456","juanito@gmail.com"));
-        lista.add(new Estudiante("Ana Gómez","3002223344","987654","anita53@gmail.com"));
-        lista.add(new Estudiante("Carlos López","3003334455","456789","carlosandres@gmail.com"));
-        lista.add(new Estudiante("María Torres","3004445566","654321","maria234@gmail.com"));
+        ArrayList<Estudiante> lista = dbHelper.obtenerEstudiantes();
 
         EstudianteAdapter adapter = new EstudianteAdapter(lista);
 

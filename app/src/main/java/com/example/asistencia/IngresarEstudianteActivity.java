@@ -1,16 +1,20 @@
 package com.example.asistencia;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class IngresarEstudianteActivity extends AppCompatActivity {
 
     EditText etNombre, etTelefono, etCedula, etCorreo;
     Button btnGuardar;
+
+    // 👉 NUEVO (BD)
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,9 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
         etCedula = findViewById(R.id.etCedula);
         etCorreo = findViewById(R.id.etCorreo);
         btnGuardar = findViewById(R.id.btnGuardar);
+
+        // 👉 NUEVO (inicializar BD)
+        dbHelper = new DatabaseHelper(this);
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,9 +55,15 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
             return;
         }
 
-        Toast.makeText(this, "Estudiante guardado correctamente", Toast.LENGTH_SHORT).show();
+        // 👉 NUEVO (guardar en SQLite)
+        boolean insertado = dbHelper.insertarEstudiante(nombre, telefono, cedula, correo);
 
-        limpiarCampos();
+        if(insertado){
+            Toast.makeText(this, "Estudiante guardado correctamente", Toast.LENGTH_SHORT).show();
+            limpiarCampos();
+        }else{
+            Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void limpiarCampos(){

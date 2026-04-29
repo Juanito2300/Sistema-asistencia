@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class CentroControlActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
+    DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +25,16 @@ public class CentroControlActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerCentro);
 
+
+        dbHelper = new DatabaseHelper(this);
+
         cargarDatos();
     }
 
     private void cargarDatos(){
 
-        ArrayList<Estudiante> lista = new ArrayList<>();
 
-        lista.add(new Estudiante("Juan Pérez","3001112233","123456","juanito@gmail.com"));
-        lista.add(new Estudiante("Ana Gómez","3002223344","987654","angomez5@gmail.com"));
-        lista.add(new Estudiante("Carlos López","3003334455","456789","carlitos45@gmail.com"));
-        lista.add(new Estudiante("María Torres","3004445566","654321","marito678@gmail.com"));
+        ArrayList<Estudiante> lista = dbHelper.obtenerEstudiantes();
 
         CentroControlAdapter adapter = new CentroControlAdapter(lista);
 

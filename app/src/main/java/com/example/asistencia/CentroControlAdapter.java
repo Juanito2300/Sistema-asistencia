@@ -1,9 +1,11 @@
 package com.example.asistencia;
 
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,15 +39,74 @@ public class CentroControlAdapter extends RecyclerView.Adapter<CentroControlAdap
         holder.tvCedula.setText("Cédula: " + e.cedula);
         holder.tvCorreo.setText("Correo: " + e.correo);
 
-        holder.btnEditar.setOnClickListener(v ->
-                Toast.makeText(v.getContext(),
-                        "Editar estudiante",
-                        Toast.LENGTH_SHORT).show());
+        holder.btnEliminar.setOnClickListener(v -> {
 
-        holder.btnEliminar.setOnClickListener(v ->
-                Toast.makeText(v.getContext(),
-                        "Eliminar estudiante",
-                        Toast.LENGTH_SHORT).show());
+            new AlertDialog.Builder(v.getContext())
+                    .setTitle("Eliminar")
+                    .setMessage("¿Seguro que quieres eliminar este estudiante?")
+                    .setPositiveButton("Sí", (dialog, which) -> {
+
+                        DatabaseHelper db = new DatabaseHelper(v.getContext());
+
+                        if(db.eliminarEstudiante(e.id)){
+                            lista.remove(position);
+                            notifyItemRemoved(position);
+                            Toast.makeText(v.getContext(),"Eliminado",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(v.getContext(),"Error",Toast.LENGTH_SHORT).show();
+                        }
+
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        });
+
+        holder.btnEditar.setOnClickListener(v -> {
+
+            View view = LayoutInflater.from(v.getContext())
+                    .inflate(R.layout.dialog_editar_estudiante, null);
+
+            EditText etNombre = view.findViewById(R.id.etNombre);
+            EditText etTelefono = view.findViewById(R.id.etTelefono);
+            EditText etCedula = view.findViewById(R.id.etCedula);
+            EditText etCorreo = view.findViewById(R.id.etCorreo);
+
+            etNombre.setText(e.nombre);
+            etTelefono.setText(e.telefono);
+            etCedula.setText(e.cedula);
+            etCorreo.setText(e.correo);
+
+            new AlertDialog.Builder(v.getContext())
+                    .setTitle("Editar estudiante")
+                    .setView(view)
+                    .setPositiveButton("Guardar", (dialog, which) -> {
+
+                        DatabaseHelper db = new DatabaseHelper(v.getContext());
+
+                        boolean actualizado = db.actualizarEstudiante(
+                                e.id,
+                                etNombre.getText().toString(),
+                                etTelefono.getText().toString(),
+                                etCedula.getText().toString(),
+                                etCorreo.getText().toString()
+                        );
+
+                        if(actualizado){
+                            e.nombre = etNombre.getText().toString();
+                            e.telefono = etTelefono.getText().toString();
+                            e.cedula = etCedula.getText().toString();
+                            e.correo = etCorreo.getText().toString();
+
+                            notifyItemChanged(position);
+                            Toast.makeText(v.getContext(),"Actualizado",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(v.getContext(),"Error",Toast.LENGTH_SHORT).show();
+                        }
+
+                    })
+                    .setNegativeButton("Cancelar", null)
+                    .show();
+        });
     }
 
     @Override
