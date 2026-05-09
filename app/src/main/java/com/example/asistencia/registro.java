@@ -2,7 +2,6 @@ package com.example.asistencia;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,10 +14,14 @@ public class registro extends AppCompatActivity {
     Button btnRegistrarUsuario;
     TextView tvVolverLogin;
 
+    DatabaseHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        dbHelper = new DatabaseHelper(this);
 
         etNuevoUsuario = findViewById(R.id.etNuevoUsuario);
         etCorreo = findViewById(R.id.etCorreo);
@@ -28,39 +31,58 @@ public class registro extends AppCompatActivity {
         btnRegistrarUsuario = findViewById(R.id.btnRegistrarUsuario);
         tvVolverLogin = findViewById(R.id.tvVolverLogin);
 
-        btnRegistrarUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String usuario = etNuevoUsuario.getText().toString().trim();
-                String correo = etCorreo.getText().toString().trim();
-                String telefono = etTelefono.getText().toString().trim();
-                String password = etNuevaPassword.getText().toString().trim();
-                String confirmar = etConfirmarPassword.getText().toString().trim();
+        btnRegistrarUsuario.setOnClickListener(view -> {
 
-                if(usuario.isEmpty() || correo.isEmpty() || telefono.isEmpty() || password.isEmpty() || confirmar.isEmpty()){
-                    Toast.makeText(registro.this, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+            String usuario = etNuevoUsuario.getText().toString().trim();
+            String correo = etCorreo.getText().toString().trim();
+            String telefono = etTelefono.getText().toString().trim();
+            String password = etNuevaPassword.getText().toString().trim();
+            String confirmar = etConfirmarPassword.getText().toString().trim();
 
-                if(!password.equals(confirmar)){
-                    Toast.makeText(registro.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+            if(usuario.isEmpty() || correo.isEmpty() || telefono.isEmpty()
+                    || password.isEmpty() || confirmar.isEmpty()){
 
-                Toast.makeText(registro.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(registro.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                Toast.makeText(registro.this,
+                        "Complete todos los campos",
+                        Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            if(!password.equals(confirmar)){
+                Toast.makeText(registro.this,
+                        "Las contraseñas no coinciden",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            boolean registrado = dbHelper.registrarUsuario(
+                    usuario,
+                    correo,
+                    telefono,
+                    password
+            );
+
+            if(registrado){
+                Toast.makeText(registro.this,
+                        "Usuario registrado correctamente",
+                        Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(registro.this,
+                        MainActivity.class));
+                finish();
+
+            }else{
+                Toast.makeText(registro.this,
+                        "Error al registrar",
+                        Toast.LENGTH_SHORT).show();
+            }
+
         });
 
-        tvVolverLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(registro.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        tvVolverLogin.setOnClickListener(view -> {
+            startActivity(new Intent(registro.this,
+                    MainActivity.class));
+            finish();
         });
     }
 }

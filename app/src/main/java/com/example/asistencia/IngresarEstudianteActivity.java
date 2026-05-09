@@ -13,7 +13,7 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
     EditText etNombre, etTelefono, etCedula, etCorreo;
     Button btnGuardar;
 
-    // 👉 NUEVO (BD)
+
     DatabaseHelper dbHelper;
 
     @Override
@@ -32,7 +32,6 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
         etCorreo = findViewById(R.id.etCorreo);
         btnGuardar = findViewById(R.id.btnGuardar);
 
-        // 👉 NUEVO (inicializar BD)
         dbHelper = new DatabaseHelper(this);
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +54,7 @@ public class IngresarEstudianteActivity extends AppCompatActivity {
             return;
         }
 
-        // 👉 NUEVO (guardar en SQLite)
+
         boolean insertado = dbHelper.insertarEstudiante(nombre, telefono, cedula, correo);
 
         if(insertado){

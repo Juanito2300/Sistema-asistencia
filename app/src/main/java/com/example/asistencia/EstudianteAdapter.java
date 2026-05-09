@@ -96,7 +96,7 @@ public class EstudianteAdapter extends RecyclerView.Adapter<EstudianteAdapter.Vi
 
                         holder.btnNo.setVisibility(View.GONE);
 
-                        // dejar ✔ fijo
+
                         holder.btnSi.setEnabled(false);
 
                     })

@@ -8,17 +8,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
-        <!-- TITULO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="30dp">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Panel de Control"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#0D1B4C"
-            android:layout_marginBottom="30dp"/>
+            android:textColor="#0D1B4C"/>
+
+        <LinearLayout
+            android:id="@+id/btnPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@android:drawable/ic_menu_myplaces"
+                android:tint="#3949AB"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textSize="12sp"
+                android:textColor="#3949AB"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
         <!-- INGRESAR ESTUDIANTES -->
         <LinearLayout

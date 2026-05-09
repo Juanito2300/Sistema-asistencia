@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Asistencia"
         tools:targetApi="31">
         <activity
+
+            android:name=".PerfilActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Asistencia" />
+        <activity
             android:name=".gps"
             android:exported="false" />
         <activity
