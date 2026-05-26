@@ -1,56 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#EAF1FB">
+
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="32dp"
-        android:gravity="center"
-        android:background="#F5F7FA">
+        android:padding="30dp"
+        android:background="#FFFFFF"
+        android:elevation="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Iniciar Sesión"
-            android:textSize="28sp"
+            android:text="Bienvenido"
+            android:textSize="32sp"
             android:textStyle="bold"
-            android:textColor="#222222"
-            android:layout_marginBottom="40dp"/>
+            android:textColor="#1E293B"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicia sesión para continuar"
+            android:textSize="15sp"
+            android:textColor="#64748B"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"/>
 
         <EditText
             android:id="@+id/etUsuario"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:hint="Usuario"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text"
-            android:layout_marginBottom="20dp"/>
+            android:textColor="#000000"
+            android:textColorHint="#94A3B8"
+            android:paddingStart="16dp"
+            android:backgroundTint="#2563EB"
+            android:layout_marginBottom="18dp"/>
 
-        <EditText
-            android:id="@+id/etPassword"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:background="@android:drawable/edit_text"
-            android:layout_marginBottom="30dp"/>
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:backgroundTint="#2563EB">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#94A3B8"
+                android:paddingStart="16dp"/>
+
+            <ImageView
+                android:id="@+id/imgMostrar"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="12dp"
+                android:src="@android:drawable/ic_menu_view"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Ingresar"
-            android:backgroundTint="#3F51B5"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="16sp"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="20dp"/>
+            android:backgroundTint="#2563EB"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp"/>
 
-        <!-- Botón de Registro -->
         <Button
             android:id="@+id/btnRegistro"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registrarse"
-            android:backgroundTint="#FF5722"
-            android:textColor="#FFFFFF"/>
+            android:layout_height="55dp"
+            android:text="Crear cuenta"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F97316"/>
+
     </LinearLayout>
+
+</LinearLayout>
